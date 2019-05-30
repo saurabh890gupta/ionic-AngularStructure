@@ -1,0 +1,103 @@
+<!-- -->
+<ion-content class="auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding text-center>
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary">
+        <strong>Zaira Mart</strong> 
+      </h2>
+      <h3>Register here...</h3>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form">
+        <ion-list radio-group [(ngModel)]="user.userType" name="userType">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                      <ion-item >  
+                          <ion-label>Reseller</ion-label>
+                      <ion-radio value="reseller"></ion-radio>
+                      </ion-item>
+                    </ion-col>
+                    <ion-col>
+                    <ion-item >  
+                        <ion-label>Dealer</ion-label>
+                    <ion-radio value="dealer"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+        
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          Enter Name
+        </ion-label>
+        <ion-input type="text" name="username" [(ngModel)]="user.username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          Enter State
+        </ion-label>
+        <ion-input type="text" name="state" [(ngModel)]="user.state"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="phone-portrait" item-start class="text-primary"></ion-icon>
+          Enter mobile
+        </ion-label>
+        <ion-input type="number" name="mobile" [(ngModel)]="user.mobile"></ion-input>
+      </ion-item>
+    
+    
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+        Enter password
+      </ion-label>
+      <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+  </form>
+
+    <div margin-top>
+      <button ion-button block color="dark" tappable (click)="register(user)">
+        Register
+      </button>
+
+      <p text-center ion-text color="secondary">Or Sign Up with:</p>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            <button ion-button icon-only block class="btn-facebook">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-4>
+            <button ion-button icon-only block class="btn-twitter">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-4>
+            <button ion-button icon-only block class="btn-gplus">
+              <ion-icon name="logo-googleplus"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="primary" tappable (click)="login()">I have an account</span>
+    </div>
+
+  </div>
+</ion-content>
